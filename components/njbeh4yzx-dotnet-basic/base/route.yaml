@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: njbeh4yzx-dotnet-basic
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: njbeh4yzx-dotnet-basic 
+  name: njbeh4yzx-dotnet-basic
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: njbeh4yzx-dotnet-basic
+    weight: 100 
